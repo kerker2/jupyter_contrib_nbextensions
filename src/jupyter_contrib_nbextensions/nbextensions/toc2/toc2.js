@@ -4,7 +4,7 @@
     // This means that we're probably embedded in a page, so we need to make
     // our definition with a specific module name
     return define('nbextensions/toc2/toc2', deps, callback);
-})(['jquery', 'require'], function($, requirejs) {
+})(['underscore', 'jquery', 'require'], function($, requirejs) {
     "use strict";
 
     var IPython;
@@ -316,7 +316,7 @@
         wrap.children('.ui-resizable-se').toggleClass('ui-icon', !make_sidebar);
         wrap.children('.ui-resizable-e').toggleClass('ui-icon ui-icon-grip-dotted-vertical', make_sidebar);
         if (make_sidebar) {
-            var sidebar_top = liveNotebook ? document.getElementById('site').top : 0
+            var sidebar_top = liveNotebook ? document.getElementById('site').offsetTop : 0
             wrap.css({top: sidebar_top,height: "",left: 0});
         }
         else {

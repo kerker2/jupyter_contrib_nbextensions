@@ -10,8 +10,7 @@ try:
     # notebook >= 5.0.0-rc1
     import notebook._tz as nbtz
 except ImportError:
-    # notebook < 5.0.0-rc1
-    import notebook.services.contents.tz as nbtz
+    import jupyter_server._tz as nbtz
 
 
 class ExecuteTimePreprocessor(ExecutePreprocessor):
